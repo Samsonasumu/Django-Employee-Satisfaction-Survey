@@ -25,3 +25,34 @@ Before running the application, ensure you have the following installed:
    ```bash
    git clone <repository-url>
    cd employee_survey
+
+
+
+python -m venv env
+source env/bin/activate  # On Windows: env\Scripts\activate
+pip install -r requirements.txt
+
+# Update DATABASES in employee_survey/settings.py with your MySQL credentials:
+ 
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'vihiga_survey',
+        'USER': 'your_username',
+        'PASSWORD': 'your_password',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
+
+
+python manage.py makemigrations
+python manage.py migrate
+
+
+python manage.py runserver
+
+
+
+
